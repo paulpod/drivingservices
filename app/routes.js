@@ -12,8 +12,28 @@ module.exports = {
 
 
 
+    /* - - - - - - - - - - - - - - - - - - - - - */
+    /* - - - Driving services / General flow - - */
+
+    app.get('/examples/elements/flow', function (req, res) {
+
+    var next = req.query.nextlink;
+   
+    var moment = require("moment");
+    var now = moment(new Date()); 
+    var today = now.format("D MMM YYYY");
+   
+    res.render('examples/elements/' + next, {'today' : today});
+    
+    });
 
 
+
+
+
+    /* - - - - - - - - - */
+    /* - - OLD  BITS - - */
+    /* - - - - - - - - - */
 
     /* - - - - - - - - - - - - - - - - - - - */
     /* Pages for EVL revision to entrypoint */

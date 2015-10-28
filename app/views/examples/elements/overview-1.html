@@ -1,0 +1,171 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_drivingprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+  <form action="flow" method="get" class="form">
+  <input type="hidden" name="nextlink" value="*"> <!-- is there a next link? -->
+
+
+
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+
+  <div>
+  <a href="verify-signout">Sign out<span class="visuallyhidden"> of this service</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+  <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Your driving licence</h2>
+
+
+  <h3>You have a full licence</h3>
+  <h3>2 offences</h3>
+  <h3>6 points</h3>
+  <h3>Valid until 25 February 2019</h3>
+
+  <p>You have a fine to pay. <a href="#">Pay now online</a></p>
+
+  <p>This is the summary. <a href="#">View your full licence and entitlements</a></p>
+
+  <p>David Lewys Morgan<br/>
+  12 Downton Road, Stockferry, London SE16 9NL<br/>
+  <a href="#">Change your details</a></p>
+
+  <p>Need to show your licence to someone else?<br/>
+  <a href="#">Get a share code</a></p>
+
+
+  <h2 class="heading-medium" style="padding:0;margin:2em 0 1em 0">Your vehicles</h2>
+
+  <div class="js-tabs nav-tabs">
+    <ul class="tabs-nav" role="tablist">
+      <li class="active"><a href="#" role="tab" id="vehicle-1" aria-controls="vehicle-1" aria-flowto="vehicle-1" aria-selected="true" tabindex="0">Blue Audi</a></li>
+      
+      <li><a href="#" role="tab" id="vehicle-2" aria-controls="vehicle-2" aria-flowto="vehicle-2" aria-selected="false" tabindex="-1">Green Toyota</a></li>
+
+      <li><a href="#" role="tab" id="vehicle-3" aria-controls="vehicle-3" aria-flowto="vehicle-3" aria-selected="false" tabindex="-2">Silver Mercedes-Benz</a></li>
+
+      <li><a href="#" role="tab" id="add-vehicle" aria-controls="add-vehicle" aria-flowto="add-vehicle" aria-selected="false" tabindex="-3">+</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+    <ul class="ul-data">
+
+        <li style="margin-bottom:8px"><span class="reg-mark-parent">Registration number</span>
+        <i class="reg-mark" style="font-size:120%">{{defaultreg}}</i>
+        </li>
+
+          <li><span>Vehicle make</span><strong>TOYOTA</strong></li>
+          <li><span>Tax class</span><strong>PLG (Private/Light Goods)</strong></li>
+          <li><span>Tax/SORN status</span><strong>This vehicle was taxed from 01 November 2014</strong></li>
+        </ul>
+
+
+        <div><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">Incorrect details?</span>
+        </summary>
+
+        <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display:block;">
+
+
+          <div class="grid-row">
+          <div class="column-two-thirds">
+            <p>If any of the above are incorrect you may have put in the wrong details, press the cancel button below to start again.</p>
+            <p>If the details are still incorrect please phone DVLA on 0300 123 4321 for advice</p>
+          </div>
+          </div>
+      
+        </div>
+      </details></div>
+
+      </div>
+      <div class="column-two-thirds" style="width:72%">
+
+        <div class="vehicle-details">
+        
+        </div>
+
+      </div>
+    </div><!-- end grid row -->
+
+
+    
+
+
+  <br clear="all">
+
+  
+
+
+  <!-- pretty useless info about how we check electronic MOT certificates here 
+  from policy I assume <a href="#" rel="external" target="_new">Find out how we do this</a> -->
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <p style="padding-top:1em;">By clicking 'Continue' you agree to the DVLA checking that your vehicle has an electronic MOT/GVT certificate (if relevant).</p>
+
+    </div>
+  </div>
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Continue">
+
+    <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
